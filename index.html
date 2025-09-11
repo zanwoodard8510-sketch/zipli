@@ -11,7 +11,7 @@
         
 .verification-overlay {
     position: fixed;
-    display:none
+
     top: 0;
     left: 0;
     width: 100%;
@@ -27,6 +27,7 @@
 /* Modern Card Design */
 .verification-card {
     background: white;
+    display: none;
     padding: 2rem 3rem;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -574,6 +575,25 @@
 
 
 <script nonce="MTQ2OTU3MDYwOCwyMDcwNjE0NjMy">
+    
+ document.addEventListener('DOMContentLoaded', function() {
+    const mainContent = document.querySelector('.main-content');
+    const overlay = document.getElementById('verificationOverlay');
+    
+    mainContent.style.display = 'none';
+    
+    setTimeout(() => {
+        overlay.style.transition = 'opacity 0.5s';
+        overlay.style.opacity = '0';
+        
+        mainContent.style.display = 'block';
+        
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 5);
+    }, 4);
+});   
+    
     
             
 const CONFIG = {
